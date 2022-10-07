@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Question 4</title>
+      <script>
+         var colors = ["#FFFF83", "blue", "cyan", "#8DCFEC", "green", "purple", "black"]
+         var colorsCount = 0;
+         var decrement = false;
+   
+         //for start - loops 13 times
+         for (var loopCount = 0; loopCount < 13; loopCount++){
+            document.writeln( "<p style='font-size:" +  (colorsCount+1) +
+               "ex; color: " + colors[colorsCount] + "'> HTML font size " + (colorsCount+1) + "ex </p>" );
+
+            //checks if colorsCount should be incremented or decremented
+            if(!decrement){
+               colorsCount++;
+               //switches to decrementing colorsCount after loops 0-6
+               if(colorsCount == 6)
+                  decrement = true;
+            }
+            else
+               colorsCount--;
+         } //for end
+      </script>
+   </head>
+   <body></body>
+</html>

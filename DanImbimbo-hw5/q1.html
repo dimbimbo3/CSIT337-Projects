@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+        <meta charset = "utf-8">
+        <title>Question 1</title>
+        <script>
+            //adds event listener to specified button element
+            function start(){
+                var button = document.getElementById("run");
+                button.addEventListener("click", runClock, false);
+            }
+
+            //displays a clock
+            function runClock(){
+                //creates Date object to get current hours,mins,secs,ms
+                var now = new Date();
+                hours = checkDigits(now.getHours());
+                minutes = checkDigits(now.getMinutes());
+                seconds = checkDigits(now.getSeconds());
+                //divides milliseconds by 10 to make 3 digit numbers into 2 digit numbers with a decimal, 
+                //then rounds down to nearest integer to remove decimal & avoid rounding up to 100 (3 digits)
+                milliseconds = checkDigits(Math.floor(now.getMilliseconds()/10));
+
+                //inserts time into specified element
+                document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds + ":" + milliseconds;
+
+                //updates current time every 100 milliseconds
+                setTimeout(runClock, 100);
+            }
+
+            //places a 0 in front of one-digit numbers
+            function checkDigits(x){
+                if(x < 10){
+                    time = "0" + x.toString();
+                }
+                else
+                    time = x.toString();
+                
+                return time;
+            }
+
+            //loads start function
+            window.addEventListener( "load", start, false);
+        </script>
+   </head>
+   <body>
+        <button id="run" style="font-size: 30px">Let It Run</button>
+        <p id="clock" style="font-size: 30px; margin-top: 0px">
+   </body>
+</html>

@@ -1,0 +1,67 @@
+<!-- Control movement of CS logo on browser window -->
+<!-- by JJ for CSIT 337 -->
+<html>
+    <head>
+        <title>Question 2</title>
+        <style>
+            div.bound {display:block; border-style:solid;
+            width:700px;height:520px; border-width:1px}
+            div.move { position:absolute; }
+        </style>
+        <script language="javascript">
+            var x = 5; //Starting x coord.
+            var y = 5; //Starting y coord.
+            var max_x = 510; //maximum x coord.
+            var max_y = 330; //maximum y coord.
+            var xoffset = 10; //Move 10px every step
+            var yoffset = 10; //Move 10px every step
+
+            input = window.prompt("1.Faster; 2.Normal; 3.Slower");
+            switch(input){
+                case"1":
+                    //increases speed by a factor of 2
+                    xoffset *= 2;
+                    yoffset *= 2;
+                    break;
+                case"2":
+                    //maintains normal speed
+                    break;
+                case"3":
+                    //decreases speed by 1/2
+                    xoffset *= (1/2);
+                    yoffset *= (1/2);
+                    break;
+                default:
+                    //defaults to normal speed
+                    window.alert("Invalid input, normal speed will be chosen.");
+                    break;
+            }
+
+            function go()
+            {
+                moveCSLogo()
+            }
+            function moveCSLogo() {
+                x = x + xoffset;
+                y = y + yoffset;
+                //Move the image to the new location
+                document.getElementById("msucs").style.top = y+'px';
+                document.getElementById("msucs").style.left = x+'px';
+                //if reach boundaries, reset offset vectors
+                if ((x+xoffset > max_x) || (x+xoffset < 0))
+                xoffset *=-1;
+                if ((y+yoffset > max_y) || (y+yoffset < 0))
+                yoffset *=-1;
+                window.setTimeout('moveCSLogo()',100);
+                //call moveCSLogo every 100 ms
+            }
+        </script>
+    </head>
+    <body onload="go()">
+        <div class="bound">
+            <div id="msucs" class="move">
+                <img src="beachBall.png" alt="need image here" width="200px" height="200px" />
+            </div>
+        </div>
+    </body>
+</html>

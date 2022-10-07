@@ -1,0 +1,15 @@
+#user:valid	{background-color: #E8F0FE}
+header {
+	border-bottom: 2px solid lightgray;
+	padding-bottom: 1em;
+	text-align: center;
+}
+header h1{
+	font-size: 500%;
+	text-shadow: -5px 5px 5px gray;
+}
+footer {
+	border-top: 2px solid lightgray;
+	padding-top: 1em;
+	text-align: center;
+}

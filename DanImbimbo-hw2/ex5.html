@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Exercise 5</title>
+		<style type = "text/css">
+			div			
+			{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				position: fixed;
+				top: 0;
+			}
+			.redBall	
+			{	
+				left: 0;
+				-webkit-animation: ballR linear 10s 1s infinite alternate;
+				-moz-animation: ballR linear 10s 1s infinite alternate;
+				animation: ballR linear 10s 1s infinite alternate;
+				background: -webkit-radial-gradient(top left, white, red);
+				background: -moz-radial-gradient(top left, white, red);
+				background: radial-gradient(top left, white, red)	
+			}
+			.greenBall 	
+			{	
+				right: 0;
+				z-index: -1;
+				-webkit-animation: ballG linear 10s 1s infinite alternate;
+				-moz-animation: ballG linear 10s 1s infinite alternate;
+				animation: ballG linear 10s 1s infinite alternate;
+				background: -webkit-radial-gradient(top right, white, green);
+				background: -moz-radial-gradient(top right, white, green);
+				background: radial-gradient(top right, white, green)	
+			}
+			@-webkit-keyframes ballR
+			{
+				0%		{top: 0%; left: 0%}
+				25%		{top: 25%; left: 25%}
+				50%		{top: 50%; left: 50%}
+				75%		{top: 75%; left: 75%}
+				100%	{top: 100%; left: 100%}
+			}
+			@-moz-keyframes ballR
+			{
+				0%		{top: 0%; left: 0%}
+				25%		{top: 25%; left: 25%}
+				50%		{top: 50%; left: 50%}
+				75%		{top: 75%; left: 75%}
+				100%	{top: 100%; left: 100%}
+			}
+			@keyframes ballR
+			{
+				0%		{top: 0%; left: 0%}
+				25%		{top: 25%; left: 25%}
+				50%		{top: 50%; left: 50%}
+				75%		{top: 75%; left: 75%}
+				100%	{top: 100%; left: 100%}
+			}
+			@-webkit-keyframes ballG
+			{
+				0%		{top: 0%; right: 0%}
+				25%		{top: 25%; right: 25%}
+				50%		{top: 50%; right: 50%}
+				75%		{top: 75%; right: 75%}
+				100%	{top: 100%; right: 100%}
+			}
+			@-moz-keyframes ballG
+			{
+				0%		{top: 0%; right: 0%}
+				25%		{top: 25%; right: 25%}
+				50%		{top: 50%; right: 50%}
+				75%		{top: 75%; right: 75%}
+				100%	{top: 100%; right: 100%}
+			}
+			@keyframes ballG
+			{
+				0%		{top: 0%; right: 0%}
+				25%		{top: 25%; right: 25%}
+				50%		{top: 50%; right: 50%}
+				75%		{top: 75%; right: 75%}
+				100%	{top: 100%; right: 100%}
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class = "redBall"></div>
+		<div class = "greenBall"></div>
+	</body>
+</html>
